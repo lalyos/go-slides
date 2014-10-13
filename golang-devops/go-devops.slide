@@ -1,0 +1,79 @@
+Devops & Go
+Why i fall in love with Go
+
+Lajos Papp
+SequenceIQ
+lajos.papp@sequenceiq.com
+
+* Go Devops
+
+Pros
+
+- Statically compiled single binary
+- Cross compilation
+- Tools
+- More tools
+
+Issues
+
+- dependencies
+
+* How i got involved
+
+[[https://github.com/docker/docker/pull/5396][docker issue]]
+
+[[https://speakerdeck.com/vieux/making-docker-go-gophercon-2014?slide=19][making docker go]]
+
+* Binary
+
+make your package "go get"-able
+
+    go get github.com/lalyos/foodapi
+
+update all dependencies
+
+    go get -u github.com/lalyos/foodapi
+
+build all binary
+
+    go get github.com/lalyos/foodapi/...
+
+* Organize Your code
+
+- [[https://github.com/lalyos/foodapi/blob/9f6fd20e47d2f515cc969af4b0910dcb2bc4b949/db.go][monolithic mainm]]
+- [[https://github.com/lalyos/foodapi/tree/9ed5bbf3ff49f808dbd789d231961326638f4d1e/cmd][main in cmd]]
+- [[https://github.com/lalyos/foodapi/tree/f9c07afbaba930ebd9b04e56ed5fd958c261a3a8/cmd][multi cmd]]
+- [[https://github.com/lalyos/foodapi][main + cmd]]
+
+* Go Tools
+
+- gofmt
+- goimport
+
+* Package Management
+
+Building
+
+Options
+
+- Vendoring [[https://github.com/docker/docker/tree/master/vendor][docker]]
+- [[https://github.com/tools/godep][godep]]
+- Versioned api/packagenames [[http://labix.org/gopkg.in][gopkg.in]]
+
+* Go Testing
+
+- [[cover][http://blog.golang.org/cover]]
+
+    go test -cover
+    go test -coverprofile=coverage.out
+    go tool cover -func=coverage.out
+    go tool cover -html=coverage.out
+
+- [[http://gocover.io/github.com/lalyos/foodapi/gofood][gocover.io]]
+.image go-cover.png
+
+* Continous Deployment
+
+- Bring your own: jenkins, bamboo,
+- [[https://travis-ci.org/lalyos/foodapi][travis]]
+- [[https://drone.io/github.com/lalyos/foodapi][dron.io]]
