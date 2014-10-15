@@ -5,24 +5,54 @@ Lajos Papp
 SequenceIQ
 lajos.papp@sequenceiq.com
 
-* Go Devops
+* What is DevOps
 
-Pros
-
-- Statically compiled single binary
-- Cross compilation
-- Tools
-- More tools
-
-Issues
-
-- dependencies
+.image devops.jpg _ 400
 
 * How i got involved
 
 [[https://github.com/docker/docker/pull/5396][docker issue]]
 
 [[https://speakerdeck.com/vieux/making-docker-go-gophercon-2014?slide=19][making docker go]]
+
+.image making-docker-go.png
+
+* Lifecycle of an Application
+
+Write code
+
+- format
+- static code check
+- test
+
+Build
+
+- binary
+- cross compile
+
+Deploy
+
+- Continous Deployment
+
+* Go Tools
+
+- gofmt
+- goimport
+- godoc
+- golint
+- go vet
+
+* Go Testing
+
+- [[cover][http://blog.golang.org/cover]]
+
+    go test -cover
+    go test -coverprofile=coverage.out
+    go tool cover -func=coverage.out
+    go tool cover -html=coverage.out
+
+- [[http://gocover.io/github.com/lalyos/foodapi/gofood][gocover.io]]
+.image go-cover.png
 
 * Binary
 
@@ -45,11 +75,6 @@ build all binary
 - [[https://github.com/lalyos/foodapi/tree/f9c07afbaba930ebd9b04e56ed5fd958c261a3a8/cmd][multi cmd]]
 - [[https://github.com/lalyos/foodapi][main + cmd]]
 
-* Go Tools
-
-- gofmt
-- goimport
-
 * Package Management
 
 Building
@@ -60,20 +85,21 @@ Options
 - [[https://github.com/tools/godep][godep]]
 - Versioned api/packagenames [[http://labix.org/gopkg.in][gopkg.in]]
 
-* Go Testing
-
-- [[cover][http://blog.golang.org/cover]]
-
-    go test -cover
-    go test -coverprofile=coverage.out
-    go tool cover -func=coverage.out
-    go tool cover -html=coverage.out
-
-- [[http://gocover.io/github.com/lalyos/foodapi/gofood][gocover.io]]
-.image go-cover.png
-
 * Continous Deployment
 
 - Bring your own: jenkins, bamboo,
 - [[https://travis-ci.org/lalyos/foodapi][travis]]
 - [[https://drone.io/github.com/lalyos/foodapi][dron.io]]
+
+* Go Devops
+
+Pros
+
+- Statically compiled single binary
+- Cross compilation
+- Built-in Tools
+- External tools
+
+Issues
+
+- dependencies
