@@ -1,0 +1,44 @@
+Docker ships hadoop to the cloud.
+
+Lajos Papp
+SequenceIQ
+lajos.papp@sequenceiq.com
+
+* What is DevOps
+
+.image devops.jpg _ 400
+
+* Why should I care
+
+.image recruit.gif _ 600
+
+* What is Docker
+
+- No magic
+- "old" technology
+
+under the hood ?
+
+- linux containers
+- aufs 
+
+* VM
+
+.image vm.png 600 _
+
+* Container
+
+.image container.png 600 _
+
+* Use cases
+
+- immutable environment
+- containerize everything
+- same env on all
+
+* Demo
+
+
+* The End ...
+
+.image fold.png _ 400
